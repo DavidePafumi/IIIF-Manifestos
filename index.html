@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIIF Manifesto</title>
+</head>
+<body>
+    <h1>IIIF Manifesto JSON</h1>
+    <p>This page is hosting the IIIF Manifesto JSON file.</p>
+
+    <script>
+        // This will load the JSON file when the page is opened
+        fetch('EL-Huntington-IIIF-manifesto.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data); // You can remove this line or process the data further
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+</body>
+</html>
